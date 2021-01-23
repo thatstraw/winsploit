@@ -18,13 +18,13 @@ def banner():
                             %&&  &&&&    &&&&&&&{colored("*****","cyan")}, {colored("**","cyan")}&&  |                   
                          &&&  &&&&        &&&&&&&&/{colored("****", "cyan")}(&&   | Telegram Channel:  
                        &&&%&&&              &&&&&&&&&&&#&    | https://t.me/noobsec  
-                        &&&&/             &&&&&                                 |
-                       ,&&&&&       &&&&&,&                  | Discord Server:
-                     *&&&&&&&&&&&&&&&&&&&%                   | https://discord.gg/UYag3atP2U                                        
-                           @@     &&&&&&&                    |
-                                 &&&&&&&&&&                  | Have Fun!  
-                               .&&& &&&  &&&                                                           
-                              &&&&  &&&   &&&&                                                      
+                        &&&&/             &&&&&              | Youtube:
+                       ,&&&&&       &&&&&,&                  | https://www.youtube.com/youtube
+                     *&&&&&&&&&&&&&&&&&&&%                   |                                        
+                           @@     &&&&&&&                    | Discord Server:
+                                 &&&&&&&&&&                  | https://discord.gg/UYag3atP2U  
+                               .&&& &&&  &&&                 |                                         
+                              &&&&  &&&   &&&&               | Have Fun!                                      
                              &&&    %&&     &&&                                                         
                             #&       &&       &&                                                    
                            &&        &&        #&,                                                  
@@ -83,7 +83,7 @@ def recv_all():
 # helper function to download files from the server
 def download_file(download_folder, file_basename):
     # assigning the path to save the downloaded file
-    download_path = rf"{download_folder}\{file_basename}"
+    download_path = rf"{download_folder}/{file_basename}"
 
     # checking if the file to be save exists, if it exists 
     # append some random chars to the filename
@@ -93,7 +93,7 @@ def download_file(download_folder, file_basename):
         filename = ".".join(filename_list[:-1])
         file_ext = filename_list[-1]
         full_filename = f"{filename}-{rand_string()}.{file_ext}"
-        download_path = rf"{download_folder}\{full_filename}"
+        download_path = rf"{download_folder}/{full_filename}"
     # recieveing and saving the file            
     with open(download_path, "wb") as file:
         data_size = int(client_sock.recv(64).decode())
